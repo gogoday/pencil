@@ -1,0 +1,56 @@
+{
+  "name": "pencil",
+  "version": "1.0.0",
+  "description": "",
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "tsc",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "test:unit:direct": "TS_NODE_FILES=true mocha 'test/unit/**/*.ts'",
+    "test:unit": "npm run coverage",
+    "coverage": "nyc npm run test:unit:direct"
+  },
+  "devDependencies": {
+    "@istanbuljs/nyc-config-typescript": "^1.0.1",
+    "@types/mocha": "^8.0.3",
+    "@types/sinon": "^9.0.5",
+    "@typescript-eslint/eslint-plugin": "^3.10.1",
+    "@typescript-eslint/parser": "^3.10.1",
+    "chai": "^4.2.0",
+    "eslint": "^7.4.0",
+    "eslint-config-prettier": "^6.11.0",
+    "eslint-plugin-prettier": "^3.1.4",
+    "husky": "^4.3.0",
+    "lint-staged": "^10.4.0",
+    "mocha": "^8.1.3",
+    "mochawesome": "^6.1.1",
+    "nyc": "^15.1.0",
+    "prettier": "^2.1.2",
+    "sinon": "^9.0.3",
+    "ts-node": "^9.0.0",
+    "typescript": "^3.9.5"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "src/**/*.ts": [
+      "eslint --fix",
+      "prettier --write src/**/*.ts",
+      "git add"
+    ]
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gogoday/pencil.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/gogoday/pencil/issues"
+  },
+  "homepage": "https://github.com/gogoday/pencil#readme"
+}

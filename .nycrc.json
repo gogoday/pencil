@@ -1,0 +1,15 @@
+{
+  "extends": "@istanbuljs/nyc-config-typescript",
+  "all": true,
+  "include": [
+    "src/**/*.ts"
+  ],
+  "reporter": [
+    "text-summary",
+    "html",
+    "lcovonly"
+  ],
+  "report-dir": ".dwt_output/coverage",
+  "lines": 0,
+  "check-coverage": true
+}
